@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import "github-markdown-css";
+import "github-markdown-css/github-markdown.css";
 import { Code, FileText, Zap } from "lucide-react";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
