@@ -1,69 +1,122 @@
-# React + TypeScript + Vite
+# 📝 Markdown Previewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, feature-rich Markdown previewer built with React, TypeScript, and Vite. This project is part of the Dev Tool Chest suite and supports real-time preview with GitHub-style markdown rendering.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔄 Real-time preview as you type
+- 🎨 Dark/Light theme support (syncs with Dev Tool Chest theme)
+- 🖼️ GitHub-style markdown rendering
+- ⚡ Fast and responsive
+- 📱 Mobile-friendly design
 
-## Expanding the ESLint configuration
+### Supported Markdown Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Text Formatting**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  - Bold, italic, strikethrough
+  - Inline code
+  - Syntax highlighting for code blocks
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Lists**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  - Ordered and unordered lists
+  - Nested lists
+  - Task lists with checkboxes
+
+- **Tables**
+
+  - Column alignment
+  - Cell formatting
+
+- **Other Elements**
+  - Blockquotes
+  - Links and images
+  - Horizontal rules
+  - Headers (h1-h6)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.0.0 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/gustavoallm/dev-tool-chest
+cd dev-tool-chest/markdown-previewer
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+# or
+yarn
 ```
+
+3. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## 🔧 Integration with Dev Tool Chest
+
+This project is designed to work seamlessly with Dev Tool Chest, sharing its theme system and UI components. The integration includes:
+
+- Shared theme system (light/dark mode)
+- Common UI components from dev-tool-chest-ui
+- Consistent styling across the suite
+
+### Theme Integration
+
+The project automatically syncs with the Dev Tool Chest theme system when used as a component. It uses the `useHostTheme` hook to maintain theme consistency:
+
+```typescript
+import { useHostTheme } from "@/hooks/useHostTheme";
+
+function App() {
+  const theme = useHostTheme();
+  // Theme will automatically sync with the host application
+}
+```
+
+## 🛠️ Technologies Used
+
+- React 18
+- TypeScript
+- Vite
+- react-markdown
+- github-markdown-css
+- remark-gfm (GitHub Flavored Markdown)
+- rehype-highlight (Syntax highlighting)
+
+## 📦 Project Structure
+
+```
+markdown-previewer/
+├── src/
+│   ├── components/     # UI components
+│   ├── hooks/         # Custom hooks (including useHostTheme)
+│   ├── App.tsx        # Main application component
+│   └── main.tsx       # Application entry point
+├── public/            # Static assets
+└── package.json       # Project dependencies and scripts
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 🙏 Acknowledgments
+
+- [react-markdown](https://github.com/remarkjs/react-markdown) for markdown parsing
+- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) for GitHub-style markdown rendering
+- [Dev Tool Chest](https://github.com/gustavoallm/dev-tool-chest) for the theme system and UI components
