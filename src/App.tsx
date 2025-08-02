@@ -32,7 +32,7 @@ function App() {
         <div className="flex flex-col md:flex-row items-center justify-between mb-2 gap-2">
           <div className="flex items-center gap-2">
             <div className="p-2 bg-primary rounded-lg">
-              <Zap className="w-6 h-6 text-white" />
+              <Zap className="w-6 h-6 text-secondary" />
             </div>
             <h1 className="text-2xl font-bold text-primary">Markdown Previewer</h1>
           </div>
@@ -65,7 +65,7 @@ function App() {
                 <h2 className="text-lg font-semibold text-primary">Editor</h2>
               </div>
               <textarea
-                className="flex-1 p-4 resize-none focus:outline-none font-mono text-sm bg-card text-primary"
+                className="flex-1 p-4 resize-none focus:outline-none font-dmsans text-sm bg-card text-primary"
                 value={markdown}
                 onChange={(e) => setMarkdown(e.target.value)}
                 spellCheck={false}
